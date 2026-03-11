@@ -119,7 +119,8 @@ def describe_page():
 
 @app.route("/results")
 def results_page():
-    return send_from_directory("templates", "Results.html")
+    return send_from_directory("templates", "Results.html") 
+
 # Optional aliases for direct HTML access
 @app.route('/uploadResumes.html')
 def upload_alias():
@@ -131,7 +132,19 @@ def describe_alias():
 
 @app.route('/Results.html')
 def results_alias():
-    return send_from_directory('templates','Results.html')
+    return send_from_directory('templates','Results.html') 
+
+@app.route("/contact")
+def contact_page():
+    return send_from_directory("templates", "contact.html")
+
+@app.route("/help")
+def help_page():
+    return send_from_directory("templates", "help.html")
+
+@app.route("/signin")
+def signin_page():
+    return send_from_directory("templates", "signin.html") 
 
 
 # ---------- API ENDPOINTS ----------

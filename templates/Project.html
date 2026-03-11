@@ -17,10 +17,9 @@
         background-color: #eaf3f4;
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
 
-        <img src="c:\Users\Anugna Patha\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\E00406144C1E7E35240AFED70F34166A\WhatsApp Image 2025-10-28 at 13.01.34_edc7654b.jpg"
-            alt="RecruitRight Logo" 
-            style="height: 200px; 
-            margin-right: 20px;"> 
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}"
+        alt="RecruitRight Logo"
+        style="height:200px; margin-right:20px"> 
 
         <center> 
             <h1 style="color:#37879A; font-size: 2.2rem; margin:0;"> 
@@ -39,9 +38,9 @@
         padding: 15px 0; 
         margin: 0; 
         background: #d6e9ec;"> 
-            <li><a href="./contact.html" style="color:#2b6d7a; text-decoration:none;">Contact</a></li>
-            <li><a href="./help.html" style="color:#2b6d7a; text-decoration:none;">Help</a></li>
-            <li><a href="./signin.html" style="color:#2b6d7a; text-decoration:none;">Sign In</a></li>
+            <li> <a href="{{ url_for('contact_page') }}" style="color:#2b6d7a; text-decoration:none;"> Contact </a> </li> 
+            <li> <a href="{{ url_for('help_page') }}" style="color:#2b6d7a; text-decoration:none;"> Help </a> </li> 
+            <li> <a href="{{ url_for('signin_page') }}" style="color:#2b6d7a; text-decoration:none;"> Sign In </a> </li> 
         </ul> 
     </nav> 
 
