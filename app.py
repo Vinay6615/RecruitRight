@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 import os, json, uuid, re
 from pathlib import Path
 
@@ -107,44 +107,31 @@ def compute_scores(texts, names, jd, keywords):
 
 @app.route("/")
 def home():
-    return send_from_directory("templates", "Project.html")
+    return render_template("Project.html") 
 
 @app.route("/upload")
 def upload_page():
-    return send_from_directory("templates", "uploadResumes.html")
+    return render_template("uploadResumes.html")
 
 @app.route("/describe")
 def describe_page():
-    return send_from_directory("templates", "describeJob.html")
+    return render_template("describeJob.html")
 
 @app.route("/results")
 def results_page():
-    return send_from_directory("templates", "Results.html") 
-
-# Optional aliases for direct HTML access
-@app.route('/uploadResumes.html')
-def upload_alias():
-    return send_from_directory('templates','uploadResumes.html')
-
-@app.route('/describeJob.html')
-def describe_alias():
-    return send_from_directory('templates','describeJob.html')
-
-@app.route('/Results.html')
-def results_alias():
-    return send_from_directory('templates','Results.html') 
+    return render_template("Results.html")
 
 @app.route("/contact")
 def contact_page():
-    return send_from_directory("templates", "contact.html")
+    return render_template("contact.html")
 
 @app.route("/help")
 def help_page():
-    return send_from_directory("templates", "help.html")
+    return render_template("help.html")
 
 @app.route("/signin")
 def signin_page():
-    return send_from_directory("templates", "signin.html") 
+    return render_template("signin.html") 
 
 
 # ---------- API ENDPOINTS ----------
