@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RecruitRight - Results</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <style>
+    .table-wrap {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #e6eef2;
+    }
+    th {
+      background: #f1f8fb;
+      color: #0b57a6;
+    }
+    tr:hover {
+      background: #f9fbfc;
+    }
+    .score {
+      color: #1368a1;
+      font-weight: 700;
+    }
+    #downloadBtn {
+      padding: 8px 16px;
+      background-color: #0b57a6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #downloadBtn:hover {
+      background-color: #094a91;
+    }
+  </style>
+  <script src="/static/js/results.js" defer></script>
+</head>
+<body>
+
+  <div style="text-align:center;padding:20px;background:#eaf3f4">
+    <h1>RecruitRight - Candidate Results</h1>
+  </div>
+
+  <div class="table-wrap">
+    <p>Below are the ranked candidates for the latest job description:</p>
+
+    <table id="resultsTable" aria-live="polite">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Total Score </th>
+          <th>Education %</th>
+          <th>Keyword %</th>
+          
+        </tr>
+      </thead>
+      <tbody id="resultsBody">
+        <!-- dynamically filled -->
+      </tbody>
+    </table>
+
+    <p style="text-align:right;margin-top:12px">
+      <button id="downloadBtn">Download TXT Report</button>
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap');
+
+h1, h2, h3, h4, h5, h6 { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+} 
+
+p { 
+  font-family: 'Poppins', 'Nunito', sans-serif; 
+} 
+.c{
+    background-color: #e6f0f4; 
+}
+#title { 
+    background-image: none; 
+    color: darkgreen; 
+} 
+
+.card-container { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 24px;
+} 
+
+.card { 
+    background: gold;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    width: 280px;
+    transition: box-shadow 0.2s;
+} 
+
+.card:hover { 
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+} 

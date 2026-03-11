@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecruitRight - Upload Resumes</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e0f0ff, #f6fbff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .upload-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0b57a6;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #0b57a6;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+
+    textarea, input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #c9d9eb;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+
+    textarea:focus, input:focus {
+      border-color: #0b57a6;
+      outline: none;
+      box-shadow: 0 0 5px rgba(11, 87, 166, 0.3);
+    }
+
+    button {
+      background-color: #0b57a6;
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #084b8a;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .success {
+      color: #007d45;
+    }
+
+    .error {
+      color: #c21807;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .upload-container {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+  </style>
+  <script src="/static/js/upload.js" defer></script>
+</head>
+
+<body>
+  <div class="upload-container">
+    <h1>📁 RecruitRight – Upload Resumes</h1>
+    <p>Upload resumes and enter the job description to analyze and rank candidates based on match scores.</p>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="jd">Job Description:</label>
+      <textarea id="jd" name="jd" rows="5" placeholder="Paste the job description here..."></textarea>
+
+      <label for="keywords">Keywords (comma-separated):</label>
+      <input type="text" id="keywords" name="keywords" placeholder="e.g., Python, Data Science, Machine Learning">
+
+      <label for="resumeFiles">Select Resume Files:</label>
+      <input type="file" id="resumeFiles" name="resumes" multiple>
+
+      <label for="resumeFolder">Or Upload a Folder (Chrome/Edge only):</label>
+      <input type="file" id="resumeFolder" name="resumes" webkitdirectory directory multiple>
+
+      <button type="submit">Upload & Analyze</button>
+    </form>
+
+    <div id="uploadStatus" class="status"></div>
+  </div>
+
+  <div class="footer">
+    <p>Powered by <b>RecruitRight</b> &copy; 2025 | Smart Resume Screening Assistant</p>
+  </div>
+</body>
+</html>
