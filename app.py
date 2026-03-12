@@ -109,17 +109,17 @@ def compute_scores(texts, names, jd, keywords):
 def home():
     return render_template("Project.html") 
 
-@app.route("/upload")
-def upload_page():
-    return render_template("uploadResumes.html")
+@app.route('/uploadResumes.html')
+def upload_alias():
+    return send_from_directory('templates','uploadResumes.html')
 
-@app.route("/describe")
-def describe_page():
-    return render_template("describeJob.html")
+@app.route('/describeJob.html')
+def describe_alias():
+    return send_from_directory('templates','describeJob.html')
 
-@app.route("/results")
-def results_page():
-    return render_template("Results.html")
+@app.route('/Results.html')
+def results_alias():
+    return send_from_directory('templates','Results.html')
 
 @app.route("/contact")
 def contact_page():
@@ -132,6 +132,7 @@ def help_page():
 @app.route("/signin")
 def signin_page():
     return render_template("signin.html") 
+
 
 
 # ---------- API ENDPOINTS ----------
